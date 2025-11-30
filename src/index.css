@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html,
+    body {
+        @apply h-full w-full overflow-hidden m-0 p-0;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Use color-scheme without invalid Tailwind @apply utilities */
+    html {
+        color-scheme: light;
+    }
+
+    html.dark {
+        color-scheme: dark;
+    }
+
+    #root {
+        @apply h-full w-full;
+    }
+
+    /* Pacifico font for portfolio text */
+    .handwritten {
+        font-family: 'Pacifico', cursive;
+    }
+
+    /* Portfolio signature text */
+    .portfolio-text {
+        font-family: 'Pacifico', cursive;
+    }
+}
+
+/* LIGHT MODE BACKGROUND */
+html:not(.dark) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* DARK MODE BACKGROUND */
+html.dark {
+    background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+}
+
+/* Light Mode - Window Glass effect */
+html:not(.dark) [style*="rgba(255, 255, 255, 0.63)"] {
+    background: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Dark Mode - Window Glass effect */
+html.dark [style*="rgba(255, 255, 255, 0.63)"] {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Light Mode - Text */
+html:not(.dark) {
+    @apply text-gray-900;
+}
+
+/* Dark Mode - Text */
+html.dark {
+    @apply text-gray-50;
+}
+
+/* Light Mode - Navbar */
+html:not(.dark) header {
+    @apply bg-white/15;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark Mode - Navbar */
+html.dark header {
+    @apply bg-black/25;
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Light Mode - Dock */
+html:not(.dark) [class*="dock"] {
+    @apply bg-white/20;
+}
+
+/* Dark Mode - Dock */
+html.dark [class*="dock"] {
+    @apply bg-black/30;
+}
+
+/* Light Mode - Buttons */
+html:not(.dark) button {
+    @apply text-gray-900;
+}
+
+/* Dark Mode - Buttons */
+html.dark button {
+    @apply text-gray-50;
+}
+
+/* Custom Scrollbar - Light Mode */
+html:not(.dark) ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Custom Scrollbar - Dark Mode */
+html.dark ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Light Mode - Input fields */
+html:not(.dark) input,
+html:not(.dark) textarea,
+html:not(.dark) select {
+    @apply bg-white/80 text-gray-900 border-gray-200;
+}
+
+html:not(.dark) input:focus,
+html:not(.dark) textarea:focus,
+html:not(.dark) select:focus {
+    @apply bg-white text-gray-900 border-blue-400;
+}
+
+/* Dark Mode - Input fields */
+html.dark input,
+html.dark textarea,
+html.dark select {
+    @apply bg-gray-900/50 text-gray-50 border-gray-700;
+}
+
+html.dark input:focus,
+html.dark textarea:focus,
+html.dark select:focus {
+    @apply bg-gray-800/70 text-gray-50 border-blue-500;
+}
+
+/* Light Mode - Links */
+html:not(.dark) a {
+    @apply text-blue-600 hover:text-blue-800;
+}
+
+/* Dark Mode - Links */
+html.dark a {
+    @apply text-blue-400 hover:text-blue-300;
+}
